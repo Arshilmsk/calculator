@@ -1,0 +1,146 @@
+/**
+ * SummaryCards Styles
+ * 
+ * Grid layout with gradient-accented cards,
+ * hover animations, and responsive design.
+ */
+
+.summary-section {
+  margin-bottom: 32px;
+}
+
+.summary-section {
+  margin-bottom: 32px;
+}
+
+.section-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 20px 0;
+}
+
+.section-icon {
+  font-size: 1.3rem;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.summary-card {
+  position: relative;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 22px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-md);
+}
+
+.summary-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: 16px 16px 0 0;
+}
+
+.summary-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-color);
+}
+
+/* Card gradient accents */
+.card-blue::before { background: linear-gradient(90deg, #3b82f6, #60a5fa); }
+.card-blue { border-top-color: rgba(59, 130, 246, 0.3); }
+
+.card-indigo::before { background: linear-gradient(90deg, #6366f1, #818cf8); }
+.card-indigo { border-top-color: rgba(99, 102, 241, 0.3); }
+
+.card-purple::before { background: linear-gradient(90deg, #8b5cf6, #a78bfa); }
+.card-purple { border-top-color: rgba(139, 92, 246, 0.3); }
+
+.card-amber::before { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+.card-amber { border-top-color: rgba(245, 158, 11, 0.3); }
+
+.card-rose::before { background: linear-gradient(90deg, #f43f5e, #fb7185); }
+.card-rose { border-top-color: rgba(244, 63, 94, 0.3); }
+
+.card-emerald::before { background: linear-gradient(90deg, #10b981, #34d399); }
+.card-emerald { border-top-color: rgba(16, 185, 129, 0.3); }
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.card-icon {
+  font-size: 1.2rem;
+}
+
+.card-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-value {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.card-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-color);
+}
+
+.card-breakdown span {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.card-subtitle {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #10b981;
+  margin-top: 4px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-value {
+    font-size: 1.2rem;
+  }
+}

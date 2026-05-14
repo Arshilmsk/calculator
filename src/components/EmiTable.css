@@ -1,0 +1,138 @@
+/**
+ * EmiTable Styles
+ * 
+ * Dark themed, responsive table with hover effects
+ * and custom scrollbars.
+ */
+
+.table-container {
+  margin-top: 32px;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 24px;
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.table-header-section {
+  margin-bottom: 20px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  max-height: 65vh; /* Responsive height based on screen size */
+  min-height: 300px;
+  overflow-y: auto;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-color);
+}
+
+/* Custom Scrollbar for table wrapper */
+.table-wrapper::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  background: var(--bg-color);
+  border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: var(--accent-light);
+  border-radius: 4px;
+  opacity: 0.5;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
+
+.emi-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.emi-table th {
+  position: sticky;
+  top: 0;
+  background: var(--surface-hover);
+  color: var(--text-secondary);
+  font-weight: 600;
+  padding: 16px;
+  border: 1px solid var(--border-color);
+  border-bottom: 2px solid var(--accent-color);
+  white-space: nowrap;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+.emi-table td {
+  padding: 14px 16px;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.emi-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.emi-table tbody tr:hover {
+  background-color: var(--surface-hover);
+}
+
+.emi-table tbody tr:last-child td {
+  border: 1px solid var(--border-color);
+}
+
+.month-col {
+  color: var(--text-muted) !important;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.date-val {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.month-num {
+  font-size: 0.75rem;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.sno-col {
+  font-weight: 700;
+  color: var(--accent-color);
+  text-align: center;
+  width: 80px;
+}
+
+.highlight-col {
+  color: var(--accent-color) !important;
+  font-weight: 600;
+}
+
+.balance-col {
+  color: #10b981 !important;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .table-container {
+    padding: 16px;
+    border-radius: 16px;
+  }
+  
+  .emi-table th, .emi-table td {
+    padding: 12px;
+  }
+}

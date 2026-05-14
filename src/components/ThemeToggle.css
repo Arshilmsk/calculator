@@ -1,0 +1,45 @@
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  border: 1px solid var(--border-color);
+  background: var(--surface-color);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-sm);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.theme-toggle:hover {
+  background: var(--surface-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-color);
+}
+
+.theme-toggle:active {
+  transform: translateY(0);
+}
+
+.toggle-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.toggle-label {
+  text-transform: capitalize;
+}
+
+@media (max-width: 768px) {
+  .theme-toggle {
+    position: static;
+    margin: 10px auto 20px;
+  }
+}
